@@ -1,11 +1,16 @@
 import "./App.css";
 import MapComponent from "./components/MapComponent";
 import NavBarComponent from "./components/NavBarComponent";
+
 function App() {
+	let modoMapa: Boolean = true;
+	// const content = ;
   return (
     <div className="appContainer">
       <NavBarComponent />
-      <MapComponent />
+	  {
+		modoMapa ? <MapComponent /> : "ALLALALALALALA"
+	  }
     </div>
   );
 }

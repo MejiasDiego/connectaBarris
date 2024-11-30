@@ -15,9 +15,9 @@ const NavBar: React.FC = () => {
       {/* Logo */}
       <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
         <img
-          src="/logo.png" // Cambia esto por la ruta de tu logo
+          src="/Logo.jpg" // Cambia esto por la ruta de tu logo
           alt="Tarragona Connect Barri"
-          style={{ height: "50px" }}
+          style={{ height: "150px" }}
         />
       </div>
 

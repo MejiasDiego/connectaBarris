@@ -76,6 +76,7 @@ const MapComponent: React.FC = () => {
             postalCode: "", // Código postal vacío
             coordinates: [e.latlng.lat, e.latlng.lng] as [number, number],
             imageUrl: "/path/to/default/image.jpg", // Imagen por defecto
+            isFavorite: false,
           };
 
           // Agregar el nuevo evento (marcador) al estado "events"
@@ -115,10 +116,20 @@ const MapComponent: React.FC = () => {
       longitude: event.coordinates[1].toString(),
       file: event.imageUrl, // Mostrar la URL de la imagen en el formulario al hacer clic en un marcador
       eventId, // Al hacer clic en el marcador, podemos editar este evento
+      isFavorite: false
     });
     setShowForm(true); // Mostrar el formulario para editar
   };
 
+  const handleFavClick = (eventId: number) => {
+    const event = events[eventId];
+    
+    setFormData((prevState) => ({
+      ...prevState,
+      isFavorite: !event.isFavorite, // Toggle the isFavorite value
+    }));
+  };
+ 
   // Manejar cambios en los campos del formulario
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -277,6 +288,7 @@ const MapComponent: React.FC = () => {
             icon={customMarkerIcon}
           >
             <Popup>
+            <button onClick={() => handleFavClick(index)}>Favorito</button>
               <img
                 src={event.imageUrl}
                 alt={event.name}

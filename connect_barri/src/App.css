@@ -1,0 +1,104 @@
+.appContainer {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Estilos para el formulario */
+form {
+  background-color: #e0c975; /* Fondo gris claro */
+  color: black; /* Color de texto negro */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Ancho fijo para el formulario */
+  max-width: 100%; /* Para que el formulario no se desborde en pantallas pequeñas */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Títulos y etiquetas dentro del formulario */
+form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Estilos para los campos de entrada */
+form input,
+form textarea {
+  background-color: #fff; /* Fondo blanco en los campos */
+  color: black; /* Color de texto negro */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%; /* Los campos ocupan todo el ancho del formulario */
+  margin-bottom: 10px; /* Espacio entre campos */
+  box-sizing: border-box;
+}
+
+/* Estilos para los botones */
+form button {
+  background-color: #007bff; /* Color azul para los botones */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 48%; /* Hacemos que los botones sean de tamaño similar */
+  margin: 5px;
+}
+
+form button:hover {
+  background-color: #0056b3; /* Azul más oscuro cuando pasamos el mouse por encima */
+}
+
+/* Estilo para el contenedor de la imagen en el popup */
+.popupImage {
+  max-width: 300px; /* Aseguramos que la imagen no sea demasiado grande */
+  max-height: 200px; /* Limitar la altura */
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilos para el popup */
+.leaflet-popup-content {
+  text-align: center;
+  padding: 10px;
+}
+
+.leaflet-popup-content img {
+  width: 100%;
+  height: auto;
+  max-width: 400px; /* Hacer que la imagen sea más grande */
+  margin-bottom: 10px;
+}
+
+.leaflet-popup-content strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.leaflet-popup-content button {
+  background-color: #dc3545; /* Botón rojo para eliminar */
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 48%; /* Botón de tamaño similar */
+  margin: 5px;
+}
+
+.leaflet-popup-content button:hover {
+  background-color: #c82333; /* Rojo más oscuro */
+}

@@ -1,8 +1,9 @@
 import "./App.css";
+import React from "react";
 import MapComponent from "./components/MapComponent";
 import NavBarComponent from "./components/NavBarComponent";
+import CineComponent from "./components/CineComponent";
 
-import React from "react";
 
 function App() {
 	// const [esteMes, setEsteMes] = React.useState(false); //TODO usar esto para los filtros
@@ -26,7 +27,7 @@ function App() {
 		isFilterFavoritos={filterFavoritos}
 	/>
 	  {
-		modoCine ? "ALLALALALALALA" : <MapComponent isFilterFavoritos={filterFavoritos}/>
+		modoCine ? <CineComponent /> : <MapComponent isFilterFavoritos={filterFavoritos}/>
 	  }
     </div>
   );

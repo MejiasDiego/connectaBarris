@@ -79,7 +79,7 @@ const MapComponent: React.FC = () => {
           };
 
           // Agregar el nuevo evento (marcador) al estado "events"
-          setEvents((prevEvents) => [...prevEvents, newEvent]);
+          //setEvents((prevEvents) => [...prevEvents, newEvent]);
 
           // Actualizar el formulario con las coordenadas del clic
           setFormData({

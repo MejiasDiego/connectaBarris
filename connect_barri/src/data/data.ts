@@ -4,7 +4,7 @@ interface Neighborhood {
   color: string; // Color para el barrio
 }
 
-interface Event {
+export interface Event {
   imageUrl: string;
   name: string;
   description: string;

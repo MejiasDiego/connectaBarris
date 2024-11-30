@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
   MapContainer,
+  Polygon,
   TileLayer,
   Marker,
   Popup,
@@ -8,6 +9,7 @@ import {
 } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { neighborhoods, events } from "../data/data";
 
 // Configurar icono del marcador personalizado
 const customMarkerIcon = new L.Icon({
@@ -255,6 +257,17 @@ const MapComponent: React.FC = () => {
         />
 
         <MapClickHandler />
+
+          {/* Dibujar polígonos para los barrios */}
+          {neighborhoods.map((neighborhood, index) => (
+          <Polygon
+            key={index}
+            positions={neighborhood.positions}
+            color={neighborhood.color}
+            weight={2}
+          >
+          </Polygon>
+        ))}
 
         {events.map((event, index) => (
           <Marker

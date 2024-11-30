@@ -79,7 +79,7 @@ const MapComponent: React.FC = () => {
           };
 
           // Agregar el nuevo evento (marcador) al estado "events"
-          setEvents((prevEvents) => [...prevEvents, newEvent]);
+          //setEvents((prevEvents) => [...prevEvents, newEvent]);
 
           // Actualizar el formulario con las coordenadas del clic
           setFormData({
@@ -202,6 +202,7 @@ const MapComponent: React.FC = () => {
   const handleDeleteEvent = (eventId: number) => {
     // Eliminar el evento del estado "events"
     const updatedEvents = events.filter((_, index) => index !== eventId);
+	localStorage.setItem("events", JSON.stringify(updatedEvents));
     setEvents(updatedEvents);
 
     // Cerrar el formulario y limpiar la posición del marcador

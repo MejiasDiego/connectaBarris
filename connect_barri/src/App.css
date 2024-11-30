@@ -102,3 +102,81 @@ form button:hover {
 .leaflet-popup-content button:hover {
   background-color: #c82333; /* Rojo más oscuro */
 }
+
+
+/* NavBar.css */
+
+/* Contenedor principal */
+.navbar-container {
+  background-color: #F0D8A8;
+  padding: 15px 30px;
+  border-bottom: 2px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Contenedor superior (Logo e Input de Fecha y Búsqueda) */
+.navbar-top {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilos del logo */
+.navbar-logo img {
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Estilos de los campos de búsqueda */
+.navbar-search {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navbar-search label {
+  color: #333;
+}
+
+.navbar-search input[type="date"],
+.navbar-search input[type="text"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.navbar-search input[type="date"] {
+  width: 150px;
+}
+
+.navbar-search input[type="text"] {
+  width: 250px;
+}
+
+/* Contenedor inferior (Botones) */
+.navbar-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Estilo de los botones */
+.navbar-button {
+  padding: 10px 20px;
+  background-color: #FFD700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.navbar-button:hover {
+  background-color: #e6c200;
+}

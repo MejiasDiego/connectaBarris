@@ -18,7 +18,12 @@ const customMarkerIcon = new L.Icon({
   iconAnchor: [20, 40], // Punto de anclaje (base del icono)
 });
 
-const MapComponent: React.FC = () => {
+
+type PropsMap = {
+	isFilterFavoritos: boolean;
+};
+
+const MapComponent: React.FC<PropsMap> = (p) => {
   // Estado para almacenar los eventos y los marcadores
   const [events, setEvents] = useState<any[]>([]);
   const [showForm, setShowForm] = useState(false);
@@ -281,7 +286,8 @@ const MapComponent: React.FC = () => {
           </Polygon>
         ))}
 
-        {events.map((event, index) => (
+        {
+        events.filter((event, _index) => p.isFilterFavoritos ? event.isFavorite : true).map((event, index) => (
           <Marker
             key={index}
             position={event.coordinates}
@@ -304,7 +310,8 @@ const MapComponent: React.FC = () => {
               <button onClick={() => handleDeleteEvent(index)}>Eliminar</button>
             </Popup>
           </Marker>
-        ))}
+        ))
+		}
       </MapContainer>
 
       {showForm && (

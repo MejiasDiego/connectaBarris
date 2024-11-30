@@ -8,5 +8,8 @@ Prueba Commit
 
 
 npm create vite@latest react-leaflet-app --template react
-cd react-leaflet-app
+
 npm install
+
+npm install leaflet react-leaflet
+npm install -D @types/leaflet

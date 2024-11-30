@@ -2,6 +2,15 @@ interface Neighborhood {
   name: string;
   positions: [number, number][]; // Array de coordenadas
   color: string; // Color para el barrio
+}
+
+interface Event {
+  imageUrl: string;
+  name: string;
+  description: string;
+  date: string; // Formato ISO 8601 (YYYY-MM-DD)
+  postalCode: string;
+  coordinates: [number, number]; // Agrega coordenadas
   isFavorite: boolean; // Indica si es favorito
 }
 
@@ -28,7 +37,6 @@ export const neighborhoods: Neighborhood[] = [
       [41.118004, 1.189256],
     ],
     color: "#FF5733",
-    isFavorite: false, // inicial
   },
   {
     name: "Campclar",
@@ -51,7 +59,6 @@ export const neighborhoods: Neighborhood[] = [
       [41.114936, 1.194715],
     ],
     color: "blue",
-    isFavorite: false, // inicial
   },
   {
     name: "Torreforta",
@@ -68,7 +75,6 @@ export const neighborhoods: Neighborhood[] = [
       [41.119157, 1.211598],
     ],
     color: "#FF33F6",
-    isFavorite: false, // inicial
   },
   {
     name: "Nou Eixample Nord",
@@ -88,7 +94,6 @@ export const neighborhoods: Neighborhood[] = [
       [41.123271, 1.252335],
     ],
     color: "red",
-    isFavorite: false, // inicial
   },
   {
     name: "Eixample Sud",
@@ -104,7 +109,6 @@ export const neighborhoods: Neighborhood[] = [
       [41.114744, 1.247026],
     ],
     color: "olive",
-    isFavorite: false, // inicial
   },
   {
     name: "Sant Salvador",
@@ -148,7 +152,6 @@ export const neighborhoods: Neighborhood[] = [
       [41.153521, 1.244471],
     ],
     color: "#cd853f",
-    isFavorite: false, // inicial
   },
   {
     name: "Eixample",
@@ -170,7 +173,6 @@ export const neighborhoods: Neighborhood[] = [
       [41.119221, 1.250884],
     ],
     color: "orange",
-    isFavorite: false, // inicial
   },
   {
     name: "Sant Pere i Sant Pau",
@@ -206,7 +208,6 @@ export const neighborhoods: Neighborhood[] = [
       [41.136021, 1.254392],
     ],
     color: "blueviolet",
-    isFavorite: false, // inicial
   },
   {
     name: "Llevant",
@@ -245,18 +246,9 @@ export const neighborhoods: Neighborhood[] = [
       [41.123352, 1.255041],
     ],
     color: "black",
-    isFavorite: false, // inicial
   },
 ];
 
-interface Event {
-  imageUrl: string;
-  name: string;
-  description: string;
-  date: string; // Formato ISO 8601 (YYYY-MM-DD)
-  postalCode: string;
-  coordinates: [number, number]; // Agrega coordenadas
-}
 
 export const events: Event[] = [
   {
@@ -267,6 +259,7 @@ export const events: Event[] = [
     date: "2025-01-21",
     postalCode: "43003", // Parte Alta
     coordinates: [41.1185, 1.2531], // Coordenadas de Parte Alta
+    isFavorite: false, // inicial
   },
   {
     imageUrl: "/img/concursCastellers.jpg",
@@ -276,6 +269,7 @@ export const events: Event[] = [
     date: "2024-12-27",
     postalCode: "43001", // Eixample
     coordinates: [41.116, 1.229], // Coordenadas del Eixample
+    isFavorite: false, // inicial
   },
   {
     imageUrl: "/img/cofradiaPescadoresSerrallo.png",
@@ -285,6 +279,7 @@ export const events: Event[] = [
     date: "2024-12-20",
     postalCode: "43004", // Serrallo
     coordinates: [41.12, 1.258], // Coordenadas del Serrallo
+    isFavorite: false, // inicial
   },
   {
     imageUrl: "/img/santSalvadorFestaMajor.png",
@@ -295,6 +290,7 @@ export const events: Event[] = [
     date: "2025-01-21",
     postalCode: "43003",
     coordinates: [41.161694, 1.241334],
+    isFavorite: false, // inicial
   },
   {
     imageUrl: "/img/santMagi.jpg",
@@ -304,6 +300,7 @@ export const events: Event[] = [
     date: "2024-11-11",
     postalCode: "43007", // Campclar
     coordinates: [41.115, 1.233], // Coordenadas de Campclar
+    isFavorite: false, // inicial
   },
   {
     imageUrl: "/img/correfocSantSalvador.jpg",
@@ -314,5 +311,6 @@ export const events: Event[] = [
     date: "2025-03-21",
     postalCode: "43003",
     coordinates: [41.161734, 1.24364],
+    isFavorite: false, // inicial
   },
 ];

@@ -3,8 +3,13 @@ import React from "react";
 
 import ButtonComponent from "./ButtonComponent";
 
+type NavProps = {
+	f_modoCine: () => void;
+	f_filterFavoritos: () => void;
+	isFilterFavoritos: boolean;
+};
 
-const NavBar: React.FC = () => {
+const NavBar: React.FC<NavProps> = (p) => {
   return (
     <div
       style={{
@@ -67,8 +72,14 @@ const NavBar: React.FC = () => {
 		<ButtonComponent texto="ESTE MES" />
 		<ButtonComponent texto="3 MESES" />
 		<ButtonComponent texto="LIMPIAR" />
-		<ButtonComponent texto="FAVORITOS" />
-		<ButtonComponent texto="MODO CINE 🎥" />
+		<ButtonComponent
+			texto={p.isFilterFavoritos ? "FAVORITOS (enabled)" : "FAVORITOS (disabled)"}
+			click_event={p.f_filterFavoritos}
+			/>
+		<ButtonComponent
+			texto="MODO CINE 🎥"
+			click_event={p.f_modoCine}
+			/>
 		<ButtonComponent texto="ACTIVAR SONIDO 🔊" />
       </div>
     </div>

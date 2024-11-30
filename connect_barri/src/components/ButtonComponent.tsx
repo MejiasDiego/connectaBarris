@@ -1,9 +1,7 @@
 import React from "react";
 
-
 type PropsButton = {
-	texto: string;
-	pepe: string;
+	click_event: () => void;
 }
 
 const ButtonComponent: React.FC<PropsButton> = (p) => {
@@ -16,6 +14,7 @@ const ButtonComponent: React.FC<PropsButton> = (p) => {
 				borderRadius: "5px",
 				cursor: "pointer",
 			}}
+			onClick={p.click_event}
 		>
 		{p.texto}
 		</button>

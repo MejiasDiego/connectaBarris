@@ -6,6 +6,7 @@ import "leaflet/dist/leaflet.css"; // Asegúrate de importar los estilos de Leaf
 
 import { neighborhoods, events } from "../data/data"; // Importamos los datos
 
+
 // Corregir iconos para Leaflet (ya que React-Leaflet no lo configura automáticamente)
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -17,7 +18,12 @@ L.Icon.Default.mergeOptions({
     "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
 });
 
-const MapComponent: React.FC = () => {
+
+type MapProps = {
+	isFilterFavoritos: boolean;
+};
+
+const MapComponent: React.FC<MapProps> = (p) => {
   return (
     <div style={{ height: "80vh" }}>
       <MapContainer
@@ -41,8 +47,6 @@ const MapComponent: React.FC = () => {
           >
             <Popup>
               <strong>{neighborhood.name}</strong>
-              <br />
-              Favorito: {neighborhood.isFavorite ? "Sí" : "No"}
             </Popup>
           </Polygon>
         ))}
@@ -51,6 +55,9 @@ const MapComponent: React.FC = () => {
         {events.map((event, index) => (
           <Marker key={index} position={event.coordinates}>
             <Popup>
+              <br />
+              {event.isFavorite ? "Favorito!" : "No Favorito"}
+              <br />
               <img
                 src={event.imageUrl}
                 alt={event.name}

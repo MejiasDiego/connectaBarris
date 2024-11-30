@@ -4,6 +4,48 @@ interface Neighborhood {
   color: string; // Color para el barrio
   isFavorite: boolean; // Indica si es favorito
 }
+export const barriosGeoJSON = {
+  type: "FeatureCollection",
+  features: [
+    {
+      type: "Feature",
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-0.12, 41.12], // Coordenadas del barrio 1
+            [-0.11, 41.12],
+            [-0.11, 41.13],
+            [-0.12, 41.13],
+            [-0.12, 41.12],
+          ],
+        ],
+      },
+      properties: {
+        barrio: "Barrio 1",
+      },
+    },
+    {
+      type: "Feature",
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [-0.13, 41.14], // Coordenadas del barrio 2
+            [-0.12, 41.14],
+            [-0.12, 41.15],
+            [-0.13, 41.15],
+            [-0.13, 41.14],
+          ],
+        ],
+      },
+      properties: {
+        barrio: "Barrio 2",
+      },
+    },
+    // Añadir más barrios aquí
+  ],
+};
 
 export const neighborhoods: Neighborhood[] = [
   {
